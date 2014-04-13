@@ -1,0 +1,28 @@
+Use RequireJS to load Underscore
+to solve the following puzzle:
+Use numbers from 1 to 9, no repeat
+Find all the solutions that meets this requirement
+AB X CDE = FGHI
+
+for example
+12 X 345 = 6789 is not ok
+39 X 186 = 7254 is ok
+
+Goal: learn how to use underscore functions
+Take your time on this. It is not a speed test, but more like a training practice.
+
+reference from
+http://www.sitepoint.com/understanding-requirejs-for-effective-javascript-module-loading/
+// http://www.9bitstudios.com/2013/03/loading-javascript-with-requirejs/
+//http://www.mojavelinux.com/articles/javascript_hashes.html
+
+
+Algorithms analysis:
+take all possible 4 digits number, search the rest five numbers permutations, see whether there is a combination
+satisfy AB X CDE = FGHI
+4 digits will have c(9,4) = 126 , so we have 126 collections.
+each case will have 5! = 24 possible permutations(rest 5 digits);
+time complexity should be around 120 *  126 = 15120
+find 126 collections we need 9*8*7*6 + 9*8*7 + 9*8 + 9 = 3606
+total = 18726
+brute force (987-123) * (98 - 10) = 76032
